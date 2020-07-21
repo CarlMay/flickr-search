@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://domain-cdn.wyzetalk.com/prod/domains/letstalk/font-awesome.min.css">
+
+    <style type="text/css">
+
+        #selfTestResults .fa {
+            font: normal normal normal 14px / 1 FontAwesome !important;
+        }
+
+        #selfTestResults .status-container,
+        #selfTestResults .user-details {
+            text-align: center;
+        }
+
+        #selfTestResults .status-container .circle {
+            padding: 0.75rem;
+            border-radius: 50%;
+            background-color: white;
+            max-width: 70px;
+            min-width: 70px;
+            min-height: 70px;
+            align-self: center;
+            justify-content: center;
+            display: flex;
+            -webkit-box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        #selfTestResults .status-container .circle .inner-circle {
+            padding: 0.15rem;
+            border-radius: 50%;
+            border: 4px solid #f08e33;
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #selfTestResults .status-container p {
+            color: white !important;
+            font-size: 18px !important;
+        }
+
+        #selfTestResults .status-container,
+        #selfTestResults .status-container h2 {
+            color: white !important;
+            font-size: 26px !important;
+            text-transform: uppercase;
+        }
+
+        #selfTestResults .status-container h2 {
+            font-weight: bold !important;
+            margin-top: 0;
+        }
+
+        #selfTestResults .status-container {
+            padding: 30px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            -webkit-box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.1);
+            background-color: #192a6a;
+        }
+
+        #selfTestResults .status-container {
+            background-color: #192a6a;
+        }
+
+        #selfTestResults .status-container.pass h2,
+        #selfTestResults .status-container.restricted h2 {
+            color: #192a6a !important;
+        }
+
+        #selfTestResults .inner-circle.pass {
+            border-color: #192a6a !important;
+        }
+
+        #selfTestResults .inner-circle {
+            background-color: #f3f5f7 !important;
+        }
+
+        #selfTestResults .inner-circle.pass .icon {
+            color: #192a6a !important;
+            font-size: 30px !important;
+        }
+
+            #selfTestResults .inner-circle .icon {
+            font-size: 30px !important;
+        }
+
+        #selfTestResults .inner-circle.fail {
+            border-color: #e83b3b !important;
+        }
+
+        #selfTestResults .inner-circle.fail .icon {
+            color: #e83b3b !important;
+        }
+
+
+        #selfTestResults .date-container {
+            border-top: white solid 2px;
+            border-bottom: white solid 2px;
+            padding: 1rem 0;
+            margin-top: 16px;
+        }
+
+        #selfTestResults .pass .date-container,
+        #selfTestResults .pass .circle {
+            background-color: #59b988 !important;
+        }
+
+        #selfTestResults .fail .date-container,
+        #selfTestResults .fail .circle {
+            background-color: #e83b3b !important;
+        }
+
+        /* Restricted */
+        #selfTestResults .restricted .date-container,
+        #selfTestResults .restricted .circle {
+            background-color: #f08e33 !important;
+        }
+
+        #selfTestResults .inner-circle.restricted .icon {
+            color: #f08e33 !important;
+        }
+
+        #selfTestResults .inner-circle.restricted {
+            border-color: #192a6a !important;
+        }
+
+        #selfTestResults .inner-circle.restricted .icon {
+            color: #192a6a !important;
+        }
+
+        #selfTestResults .status-container h2,
+        #selfTestResults .status-container p,
+        #selfTestResults .status-info h3,
+        #selfTestResults .user-details h2 {
+            text-transform: uppercase;
+        }
+
+        #selfTestResults .user-details {
+            font-size: 18px !important;
+        }
+
+        #selfTestResults .user-details h2 {
+            margin-bottom: 8px;
+            font-weight: bold !important;
+        }
+
+        #selfTestResults .user-details p,
+        #selfTestResults .status-info h3,
+        #selfTestResults .status-info {
+            margin: 8px 0 !important;
+            font-size: 18px !important;
+        }
+
+        /* Info Section */
+        #selfTestResults .status-info h3 {
+            margin-top: 2rem !important;
+            font-weight: bold !important;
+            color: #192a6a !important;
+        }
+
+        #selfTestResults .status-info p {
+            margin-top: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+
+        }
+
+        #selfTestResults .status-info a {
+            font-weight: bold !important;
+            font-size: 16px !important;
+        }
+
+        #selfTestResults .status-info p.heading {
+            font-size: 16px !important;
+            margin-top: 1rem !important;
+            font-weight: bold !important;
+        }
+
+        #selfTestResults .status-info h3.fail {
+            background-color: #e83b3b !important;
+            color: white !important;
+            border-radius: 50px;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        #selfTestResults .status-info h3.pass {
+            background-color: #59b988 !important;
+            color: white !important;
+            border-radius: 50px;
+            text-align: center;
+            padding: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+
+{{
+// Fix: Old API versions don't have empNo on contact an cause template errors.
+const sData = (contact.hasOwnProperty("empNo")) ? getState('Health') : {"v": "Update"};
+
+const mappings = {
+    'Green': {
+        status: 'pass',
+        msg: 'Access Granted',
+        iconName: 'fa-check',
+        showLink: false,
+        info: '<h3 class="pass">You may enter the premises.</h3>'
+    },
+    'Red': {
+        status: 'fail',
+        msg: 'Access Denied',
+        iconName: 'fa-times',
+        showLink: false,
+        info: '<h3 class="fail">Please proceed to the Isolation Room for testing</h3>'
+    },
+    'Amber': {
+        status: 'restricted',
+        msg: 'Access Restricted',
+        iconName: 'fa-minus',
+        showLink: false,
+        info: '<h3>You are at medium risk of COVID-19 infection.</h3>' +
+                '<p>Please proceed to work with caution and make sure you complete the Temperature Check form when you get to the security gate.</p>' +
+                '<p>If you are working a day shift, please inform your shift manager or supervisor immediately, and seek medical attention from the clinic on site.</p>' +
+                '<p>If you are working a night shift or your site does not have clinic, please inform your shift manager or supervisor. Please visit the clinic or your healthcare provider after your shift if your symptoms persist.</p>'
+    },
+    'Stale': {
+        // status: 'TO DO',
+        // msg: 'To obtain or update your WeCare card, please go to Monitor my self everyday and complete the WeCare Daily Form.',
+        showLink: true
+    },
+    'Update': {
+        status: 'update',
+        msg: 'Application Update',
+        info: '<h3>Your application is out of date.</h3>' +
+                '<p>Please update your app in your iOS or Android app store in order to view your assessment results.</p>',
+        showLink: false
+    }
+};
+
+const stateKey = sData.v || 'Stale';
+const dateKey = sData.d || moment();
+
+let state = mappings[stateKey];
+let dateStr = moment(dateKey).format("D MMMM YYYY");
+let completionTime = moment(dateKey).utcOffset(120).format('LT');
+}}
+
+<!--<pre>{{- JSON.stringify(sData, null, '\t') }}</pre>-->
+<!--<pre>{{- JSON.stringify(contact, null, '\t') }}</pre>-->
+<!--<pre>{{- JSON.stringify(getState('Health'), null, '\t') }}</pre>-->
+
+<div id="selfTestResults">
+
+    {{ if (!state) { }}
+    <p>No information available.</p>
+    {{ }else { }}
+
+    {{ if (state.showLink) { }}
+    <a class="button button-block" href='#/app/campaign/5eb6b49899d527d3b90129d3?navId=5eb6bb4199d527d3b9012a05'>Please
+        Complete this Form</a>
+
+    {{ }else{ }}
+
+    <div class="status-container {{- state.status }}">
+        <div class="circle">
+            <span class="inner-circle {{- state.status }} "><i class="icon fa {{- state.iconName }} "></i></span>
+        </div>
+        <div class="date-container">
+            <h2>{{- state.msg }}</h2>
+        </div>
+        <p>{{- dateStr }}</p>
+    </div>
+
+    {{ if(state.status !== 'update') { }}
+
+    <div class="user-details">
+        <h2>
+            <span>{{- contact.name }}</span>
+            <br/>
+            <span>{{- contact.surname }}</span>
+        </h2>
+             <p><span>Employee Number: </span> {{- contact.empNo }}</p>
+             <p><span>Completion Time: {{- completionTime }}</span></p>
+    </div>
+
+    {{ } }}
+
+    <div class="status-info">
+        {{- state.info }}
+    </div>
+
+    {{ }
+    } }}
+</div>
+<img style="width:100%" alt="" src="https://domain-cdn.wyzetalk.com/docs/d-910/qrcode-emp/{{= contact.empNo }}.bmp"/>
+</body>
+</html>
