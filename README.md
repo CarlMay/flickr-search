@@ -1,2 +1,0 @@
-# flickr-search
-Search Flickr
