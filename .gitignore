@@ -24,5 +24,5 @@ yarn-error.log*
 
 auth_config.json
 
-# Webstorm settings
+/.idea
 .idea
